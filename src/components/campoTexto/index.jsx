@@ -8,7 +8,7 @@ const CampoTexto = (props) => {
     return (
         <div className="campo-texto">
             <label htmlFor="">{props.label}</label>
-            <input type="text" placeholder={placeholder} />
+            <input required={props.obrigatorio} type="text" placeholder={placeholder} />
         </div>
     )
 }
