@@ -6,6 +6,7 @@
     display: block;
     margin-bottom: 8px;
     font-size: 24px;
+    font-weight: 600;
 }
 
 .campo-texto input{
