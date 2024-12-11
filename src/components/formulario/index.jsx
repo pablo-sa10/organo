@@ -4,7 +4,7 @@ import ListaSuspensa from '../listaSuspensa/indes';
 import Botao from '../botao';
 import { useState } from 'react';
 
-const Formulario = () => {
+const Formulario = (props) => {
 
     const times = [
         'Programação',
@@ -18,14 +18,21 @@ const Formulario = () => {
 
     const save = (e) => {
         e.preventDefault()
-        console.log("form => ", nome, cargo, imagem, time)
+        props.colaboradorCadastrado({
+            nome,
+            cargo, 
+            imagem,
+            time
+        })
+
+        console.log(nome, cargo, imagem, time)
         
     }
 
     const [nome, setNome] = useState('')
     const [cargo, setCargo] = useState('')
     const [imagem, setImagem] = useState('')
-    const [time, setTime] = useState('');
+    const [time, setTime] = useState('Programação');
 
     return (
         <section className='formulario'>
