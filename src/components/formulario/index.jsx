@@ -6,16 +6,6 @@ import { useState } from 'react';
 
 const Formulario = (props) => {
 
-    const times = [
-        'Programação',
-        'Front-End',
-        'Data-Science',
-        'Devops',
-        'UX e Design',
-        'Mobile',
-        'Inovação e Gestão'
-    ]
-
     const save = (e) => {
         e.preventDefault()
         props.colaboradorCadastrado({
@@ -55,9 +45,10 @@ const Formulario = (props) => {
                     placeholder="Insira uma imagem"
                     valor={imagem}
                     change={valor => setImagem(valor)}/>
-                <ListaSuspensa valor={time}
+                <ListaSuspensa 
+                               label="Time" itens={props.times}
                                change={valor => setTime(valor)}
-                               label="Time" itens={times}/>
+                               valor={time}/>
                 <Botao >
                     Criar Card
                 </Botao>
