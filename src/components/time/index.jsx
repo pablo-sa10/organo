@@ -12,7 +12,7 @@ const Time = (props) => {
     }
 
     return (
-        <section style={section} className='time'>
+        props.colaboradores.length > 0 &&<section style={section} className='time'>
             <h3 style={h3}>{props.nome}</h3>
             <div className='colaboradores'>
                 {props.colaboradores.map(colaborador =>
