@@ -14,9 +14,10 @@ const Formulario = (props) => {
             imagem,
             time
         })
-
-        console.log(nome, cargo, imagem, time)
-        
+        setNome('')
+        setCargo('')
+        setImagem('')  
+        setTime('Programação')
     }
 
     const [nome, setNome] = useState('')
