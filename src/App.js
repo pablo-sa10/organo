@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Banner from './components/banner';
+import Banner from './components/banner'
 import Formulario from './components/formulario';
 import Time from './components/time';
 import Rodape from './components/rodape/rodape';
@@ -48,7 +48,7 @@ function App() {
 
   return (
     <div className="App">
-      <Banner />
+      <Banner enderecoImagem='/images/imagens/banner.png' textoAlternaltivo='O banner principal da página do Organo' />
       <Formulario times={times.map(time => time.nome)} colaboradorCadastrado={colaborador => setColaborador([...colaboradores, colaborador])} />
       {times.map(time => <Time
         key={time.nome}
@@ -57,7 +57,7 @@ function App() {
         corSecundaria={time.corSecundaria}
         colaboradores={colaboradores.filter(colaborador => colaborador.time === time.nome)}
       />)}
-      <Rodape/>
+      <Rodape />
     </div>
   );
 }
