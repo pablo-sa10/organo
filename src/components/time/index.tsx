@@ -1,7 +1,15 @@
+import { IColaborador } from '../../shared/interfaces/iColaborador'
 import Colaborador from '../colaborador/colaborador'
 import './time.css'
 
-const Time = (props) => {
+interface TimeProps {
+    corSecundaria: string
+    corPrimaria: string
+    nome: string
+    colaboradores: IColaborador[]
+}
+
+const Time = (props: TimeProps) => {
 
     const section = {
         backgroundColor: props.corSecundaria,
@@ -17,6 +25,8 @@ const Time = (props) => {
             <div className='colaboradores'>
                 {props.colaboradores.map(colaborador =>
                     <Colaborador
+                        corDeFundo={props.corPrimaria} 
+                        key={colaborador.nome}
                         nome={colaborador.nome}
                         cargo={colaborador.cargo}
                         imagem={colaborador.imagem}
