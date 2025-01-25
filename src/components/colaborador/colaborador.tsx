@@ -12,8 +12,8 @@ const Colaborador = ({nome, cargo, imagem, corDeFundo}: ColaboradorProps) => {
     }
 
     return (
-        <div className='colaborador' style={corFundo}>
-            <div className='cabecalho'>
+        <div className='colaborador'>
+            <div className='cabecalho' style={corFundo}>
                 <img src={imagem} alt={nome} />
             </div>
             <div className='rodape'>
