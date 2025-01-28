@@ -3,9 +3,15 @@ import CampoTexto from "../campoTexto";
 import ListaSuspensa from "../listaSuspensa/indes";
 import Botao from "../botao";
 import { useState } from "react";
+import { IColaborador } from "../../shared/interfaces/iColaborador";
 
-const Formulario = (props) => {
-  const save = (e) => {
+interface FormProps {
+  colaboradorCadastrado: (colaborador: IColaborador) => void;
+  times: string[];
+}
+
+const Formulario = (props: FormProps) => {
+  const save = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     props.colaboradorCadastrado({
       nome,
