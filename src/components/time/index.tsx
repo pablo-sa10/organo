@@ -1,3 +1,4 @@
+import React from 'react'
 import { IColaborador } from '../../shared/interfaces/iColaborador'
 import Colaborador from '../colaborador/colaborador'
 import './time.css'
@@ -20,7 +21,7 @@ const Time = (props: TimeProps) => {
     }
 
     return (
-        props.colaboradores.length > 0 &&<section style={section} className='time'>
+        props.colaboradores.length > 0 ? <section style={section} className='time'>
             <h3 style={h3}>{props.nome}</h3>
             <div className='colaboradores'>
                 {props.colaboradores.map(colaborador =>
@@ -34,6 +35,7 @@ const Time = (props: TimeProps) => {
                 {/* <Colaborador /> */}
             </div>
         </section>
+        : <React.Fragment></React.Fragment> // ou <></>
     )
 }
 

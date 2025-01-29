@@ -2,7 +2,8 @@ import { useState } from 'react';
 import Banner from './components/banner'
 import Formulario from './components/formulario';
 import Time from './components/time';
-import Rodape from './components/rodape/rodape';
+import Rodape from './components/rodape';
+import { IColaborador } from './shared/interfaces/iColaborador';
 
 function App() {
 
@@ -49,12 +50,16 @@ function App() {
     }
   ]
 
-  const [colaboradores, setColaborador] = useState([])
+  const [colaboradores, setColaboradores] = useState<IColaborador[]>([])
+
+  const colaboradorCadastrado = (colaborador: IColaborador) => {
+    setColaboradores([...colaboradores, colaborador])
+  }
 
   return (
     <div className="App">
       <Banner enderecoImagem='/images/imagens/banner.png' textoAlternaltivo='O banner principal da página do Organo' />
-      <Formulario times={times.map(time => time.nome)} colaboradorCadastrado={colaborador => setColaborador([...colaboradores, colaborador])} />
+      <Formulario times={times.map(time => time.nome)} colaboradorCadastrado={colaborador => colaboradorCadastrado(colaborador)} />
       {times.map(time => <Time
         key={time.nome}
         nome={time.nome}
